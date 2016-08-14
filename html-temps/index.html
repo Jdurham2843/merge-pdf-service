@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>PdfMerger</title>
-		<link rel="stylesheet" type="text/css" href="styles.css">	
-		<link rel="stylesheet" type="text/css" href="dropzone.css">
-		<script src="dropzone.js"></script>
-	</head>
-	<body>
-		<header class="navbar">
-			<div class="navbar-container">
-				<center><h1 id="head-title">Pdf Merger</h1></center>
-			</div>
-		</header>
-		<div class="container">
-			<div id="content">
-				<center id="download-area">
-					<a href="#">merge.pdf</a>
-				</center>	
-				<section id="upload-container">
-					<form action="#" class="dropzone"></form>	
-				</section>
-			
-			</div>	
+<head>
+	<title>PdfMerger</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+	<header class="navbar">
+		<div class="navbar-container">
+			<center><h1 id="head-title">Pdf Merger</h1></center>
 		</div>
-
-	</body>
+	</header>
+	<div class="container">
+		<div id="content">
+			<center id="download-area">
+				<a href="#">merge.pdf</a>
+			</center>	
+			<section id="upload-container">
+				<form action="#" id="myDropzone">
+					<div id="inputs-container">
+					<div class="input-wrapper">
+						<label for="file1">File 1</label>
+						<input type="file" name="file1"/>
+					</div>
+					<div class="input-wrapper">
+						<label for="file2">File 2</label>
+						<input type="file" name="file2" />
+					</div>
+					<div class="input-wrapper">
+						<label for="file3">File 3</label>
+						<input type="file" name="file3"/>
+					</div>
+					</div>
+					<div id="button-container">
+						<button id="add-button" type="button">
+							Add another
+						</button>
+						<button id="submit-button"
+							type="submit">
+							Merge!
+						</button>
+					</div>
+				</form>	
+			</section>
+			
+		</div>	
+	</div>
+</body>
 </html>
