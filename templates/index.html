@@ -17,7 +17,7 @@
 				<a href="#">merge.pdf</a>
 			</center>	
 			<section id="upload-container">
-				<form action="#" id="myDropzone">
+				<form action="#" id="myDropzone" enctype=multipart/form-data method=post>
 					<div id="inputs-container">
 					<div class="input-wrapper">
 						<label for="file1">File 1</label>
@@ -43,6 +43,13 @@
 					</div>
 				</form>	
 			</section>
+			{% with messages = get_flashed_messages() %}
+			   {% if messages %}
+			         {% for message in messages %}
+				          {{ message }}
+					        {% endfor %}
+						   {% endif %}
+						   {% endwith %}
 			
 		</div>	
 		<script src="static/scripts.js"></script>
