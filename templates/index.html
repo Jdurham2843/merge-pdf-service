@@ -4,6 +4,8 @@
 	<title>PdfMerger</title>
 	<link rel="stylesheet" type="text/css" href="static/styles.css">	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
 	<header class="navbar">
@@ -21,25 +23,20 @@
 					<div id="inputs-container">
 					<div class="input-wrapper">
 						<label for="file1">File 1</label>
-						<input type="file" name="file[]"/>
-					</div>
-					<div class="input-wrapper">
-						<label for="file2">File 2</label>
-						<input type="file" name="file[]" />
-					</div>
-					<div class="input-wrapper">
-						<label for="file3">File 3</label>
-						<input type="file" name="file[]"/>
+						<input id="file1" type="file" name="file[]" multiple/>
+						<input id="merge-order" type='hidden' name="merge-order" />
 					</div>
 					</div>
 					<div id="button-container">
-						<button id="add-button" type="button">
-							Add another
-						</button>
 						<button id="submit-button"
-							type="submit">
+							type="button">
 							Merge!
 						</button>
+						<button id="add-button" type="button">click dis shit!</button>
+					</div>
+					<div id="file-sort-container">
+						<ul id="file-sort-list">
+						</ul>
 					</div>
 				</form>	
 			</section>

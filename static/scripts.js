@@ -1,6 +1,26 @@
-var counter = 4;
+$('#file1').on("change", function(){
+	var fileList = [];
+	for (var i = 0; i < this.files.length; i++){
+		$('#file-sort-list').append('<li>' + this.files[i].name + '</li>');
+	}
 
-$('#add-button').click(function(){
-	$('#inputs-container').append('<div class="input-wrapper"><label for="file' + counter + '">File ' + counter + ' </label><input type="file" name="file[]"/></div>');
-	counter++;
+	$('#file-sort-list').sortable();
+
+
 });
+
+$('#submit-button').click(function() {
+       	var mergeOrder = '';
+	$('li').each(function(){
+		if (mergeOrder === ''){
+			mergeOrder  = $(this).text();
+		}else{
+			mergeOrder = mergeOrder + ',' + $(this).text();
+		}
+	});
+	$('#merge-order').val(mergeOrder);
+	alert('checkit');
+	$('#myDropzone').submit();
+
+});
+

@@ -22,7 +22,6 @@ def allowed_file(filename):
 @app.route('/', methods=['GET', 'POST'])
 def index_page():
     if request.method == 'GET':
-        flash('sup buddy')
         return render_template('index.html')
 
     elif request.method == 'POST':
@@ -30,13 +29,13 @@ def index_page():
         filenames = []
         if not files:
             flash('No file part')
-            abort(404)
+            return render_template('index.html')
         for file in files:
             if allowed_file(file.filename):
                 filenames.append(file.filename)
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) 
-            else:
-                abort(404)
-        flash(filenames)
+        
+        file_message = request.form['merge-order'] if request.form['merge-order'] else ''
+        flash(file_message)
         return render_template('index.html')
