@@ -16,7 +16,9 @@
 	<div class="container">
 		<div id="content">
 			<center id="download-area">
-				<a href="#">merge.pdf</a>
+        {% if file_was_merged %}
+				<a href="/download/" target="_blank">merge.pdf</a>
+        {% endif %}
 			</center>	
 			<section id="upload-container">
 				<form action="#" id="myDropzone" enctype=multipart/form-data method=post>
@@ -32,7 +34,6 @@
 							type="button">
 							Merge!
 						</button>
-						<button id="add-button" type="button">click dis shit!</button>
 					</div>
 					<div id="file-sort-container">
 						<ul id="file-sort-list">
